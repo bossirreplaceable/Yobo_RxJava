@@ -1,5 +1,7 @@
 package com.yobo.yobo_rxjava.test1;
 
+import java.util.stream.Stream;
+
 import io.reactivex.rxjava3.core.Observable;
 
 /**
@@ -20,6 +22,7 @@ public class Test_merge {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
+                    System.out.println("o1开始执行");
                     s.onNext("one");
                     s.onNext("two");
                     s.onNext("three");
@@ -41,6 +44,8 @@ public class Test_merge {
         Observable o3 = Observable.merge(o1, o2);
 
         o3.subscribe(System.out::println);
+        o3.subscribe(System.out::println);
+
 
     }
 }
