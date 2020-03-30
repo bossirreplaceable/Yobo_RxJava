@@ -1,7 +1,12 @@
 package com.yobo.yobo_rxjava.test2;
 
+import android.text.TextUtils;
+
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import io.reactivex.rxjava3.core.Observable;
 
@@ -42,6 +47,9 @@ public class Test_UnSubscribe {
         };
 //        a.subscribe(subscriber);
 
-
+        String b=" ";
+        System.out.println("b.length="+b.length()+",i="+((int)b.charAt(0)));
+        Map<Character, Integer> m=new HashMap<>();
+//        m.put(b.charAt(2),1);
     }
 }
