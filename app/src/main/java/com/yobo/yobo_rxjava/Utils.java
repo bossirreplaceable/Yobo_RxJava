@@ -24,4 +24,7 @@ public class Utils {
         }
     }
 
+    public static void log(Integer integer) {
+        System.out.println(Thread.currentThread().getName() + ":" + integer);
+    }
 }
