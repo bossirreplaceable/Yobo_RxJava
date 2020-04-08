@@ -14,6 +14,9 @@ import java.io.Serializable;
 public class Test_Serializable {
 
     static class Student implements Serializable {
+
+        static final long serialVersionUID=23333;
+
         String name;
         int age;
         /**

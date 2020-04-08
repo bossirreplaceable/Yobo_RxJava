@@ -31,7 +31,9 @@ public class Test_Filter {
             }
         }).filter(i-> i>20);
 
+        System.out.println("开始订阅");
         a.subscribe(System.out::println);
+        System.out.println("结束订阅");
 
 
     }
