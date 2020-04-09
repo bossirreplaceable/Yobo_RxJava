@@ -7,6 +7,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by ZhangBoshi
@@ -51,6 +52,7 @@ public class Test_Socket {
         Thread.sleep(500);
         while (true) {
 
+            System.out.println("服务器：准备发送消息");
             Socket socket = server.accept();
             PrintWriter writer = new PrintWriter(socket.getOutputStream());
 
@@ -69,19 +71,19 @@ public class Test_Socket {
      * 4、1～1023的TCP端口号是保留给已知的特定服务使用，你不该使用它们；
      */
     private static void test() throws IOException, InterruptedException {
-        Thread.sleep(500);
         System.out.println("开始连接");
         client = new Socket("10.58.101.240", 5555);
         InputStreamReader reader = new InputStreamReader(client.getInputStream());
         BufferedReader buffer = new BufferedReader(reader);
-        String msg = "1";
+        String msg;
         while (true) {
             msg = buffer.readLine();
             System.out.println("客户端:" + msg);
-            if (msg == null) {
-                buffer.close();
-                break;
-            }
+//            if (msg == null) {
+//                buffer.close();
+//                break;
+//            }
+            TimeUnit.SECONDS.sleep(1);
         }
     }
 
